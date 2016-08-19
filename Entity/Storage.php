@@ -88,6 +88,7 @@ class Storage
         return $this->parameters;
     }
 
+
     /**
      * @author Krzysztof Bednarczyk
      * @param StorageParameter[]|ArrayCollection $parameters
@@ -97,6 +98,19 @@ class Storage
     {
         $this->parameters = $parameters;
         return $this;
+    }
+
+    /**
+     * @return string[]
+     * @author Krzysztof Bednarczyk
+     */
+    public function getParametersArray(){
+        $params = [];
+        $rawParams = $this->getParameters() ?: [];
+        foreach($rawParams as $item){
+            $params[$item->getKey()] = $item->getValue();
+        }
+        return $params;
     }
 
 
