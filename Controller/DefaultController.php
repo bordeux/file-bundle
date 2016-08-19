@@ -12,6 +12,6 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('BordeuxFileBundle:Default:index.html.twig');
+        exit("coo?!");
     }
 }

@@ -43,6 +43,17 @@ class StorageParameter
      */
     private $value;
 
+    /**
+     * @author Krzysztof Bednarczyk
+     * StorageParameter constructor.
+     * @param string $key
+     * @param string $value
+     */
+    public function __construct($key = null, $value = null)
+    {
+        $this->key = $key;
+        $this->value = $value;
+    }
 
 
     /**
