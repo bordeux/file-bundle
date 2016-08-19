@@ -29,6 +29,23 @@ class StorageParameter
 
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="key", type="string", length=255)
+     */
+    private $key;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="value", type="text")
+     */
+    private $value;
+
+
+
+    /**
      * Get id
      *
      * @return int
@@ -57,6 +74,48 @@ class StorageParameter
         $this->storage = $storage;
         return $this;
     }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return string
+     */
+    public function getKey()
+    {
+        return $this->key;
+    }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @param string $key
+     * @return $this
+     */
+    public function setKey($key)
+    {
+        $this->key = $key;
+        return $this;
+    }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @param string $value
+     * @return $this
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+        return $this;
+    }
+
+    
 
 
 }

@@ -58,6 +58,24 @@ class FileMetaData
      */
     private $storage;
 
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="datetime",  nullable=false)
+     */
+    private $createDate;
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * FileMetaData constructor.
+     */
+    public function __construct()
+    {
+        $this->createDate = new \DateTime();
+    }
+
+
     /**
      * Get id
      *

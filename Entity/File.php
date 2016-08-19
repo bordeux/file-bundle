@@ -69,6 +69,40 @@ class File
 
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="create_date", type="datetime",  nullable=false)
+     */
+    private $createDate;
+
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="delete_date", type="datetime",  nullable=true)
+     */
+    private $deleteDate;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="deleted", type="boolean",  nullable=false)
+     */
+    private $deleted;
+
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * File constructor.
+     */
+    public function __construct()
+    {
+        $this->deleted = false;
+        $this->createDate = new \DateTime();
+    }
+
+
+    /**
      * Get id
      *
      * @return int
@@ -199,6 +233,49 @@ class File
         $this->metaData = $metaData;
         return $this;
     }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return \DateTime
+     */
+    public function getCreateDate()
+    {
+        return $this->createDate;
+    }
+
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return \DateTime
+     */
+    public function getDeleteDate()
+    {
+        return $this->deleteDate;
+    }
+
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return boolean
+     */
+    public function isDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @param boolean $deleted
+     * @return $this
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleteDate = $deleted  ? new \DateTime() : null;
+        $this->deleted = $deleted;
+        return $this;
+    }
+
+
 
 
 
