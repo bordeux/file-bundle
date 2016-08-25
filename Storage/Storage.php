@@ -11,37 +11,33 @@ interface Storage
 {
 
     /**
-     * @param string $bucket
-     * @param string $id
+     * @param int $id
      * @param resource $resource
-     * @return boolean
+     * @return bool
      * @author Krzysztof Bednarczyk
      */
-    public function put($bucket, $id, $resource);
+    public function put(int $id, resource $resource) : bool ;
 
 
     /**
-     * @param string $bucket
-     * @param string $id
+     * @param int $id
      * @return resource
      * @author Krzysztof Bednarczyk
      */
-    public function fetch($bucket, $id);
+    public function fetch(int $id) : resource;
 
     /**
-     * @param string $bucket
-     * @param string $id
-     * @return mixed
+     * @param int $id
+     * @return bool
      * @author Krzysztof Bednarczyk
      */
-    public function remove($bucket, $id);
+    public function remove(int $id) : bool;
 
 
     /**
-     * @param string $bucket
-     * @param string $id
+     * @param int $id
      * @return boolean
      * @author Krzysztof Bednarczyk
      */
-    public function exist($bucket, $id);
+    public function exist(int $id) : bool;
 }
