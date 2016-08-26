@@ -43,6 +43,14 @@ class FileMetaData
      */
     private $sha;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="crc32", type="string", length=8, nullable=false)
+     */
+    private $crc32;
+
     /**
      * @var string
      *
@@ -154,6 +162,28 @@ class FileMetaData
         $this->md5 = $md5;
         return $this;
     }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @return string
+     */
+    public function getCrc32()
+    {
+        return $this->crc32;
+    }
+
+    /**
+     * @author Krzysztof Bednarczyk
+     * @param string $crc32
+     * @return $this
+     */
+    public function setCrc32($crc32)
+    {
+        $this->crc32 = $crc32;
+        return $this;
+    }
+
+
 
     /**
      * @author Krzysztof Bednarczyk

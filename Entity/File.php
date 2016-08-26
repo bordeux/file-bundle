@@ -53,9 +53,9 @@ class File
     private $accessKey;
 
     /**
-     * @var \stdClass
+     * @var []
      *
-     * @ORM\Column(name="data", type="object")
+     * @ORM\Column(name="data", type="json_array")
      */
     private $data;
 
@@ -194,7 +194,7 @@ class File
 
     /**
      * @author Krzysztof Bednarczyk
-     * @return \stdClass
+     * @return []
      */
     public function getData()
     {
@@ -203,10 +203,10 @@ class File
 
     /**
      * @author Krzysztof Bednarczyk
-     * @param \stdClass $data
+     * @param [] $data
      * @return $this
      */
-    public function setData($data)
+    public function setData(array $data)
     {
         $this->data = $data;
         return $this;

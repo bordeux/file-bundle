@@ -16,7 +16,7 @@ interface Storage
      * @return bool
      * @author Krzysztof Bednarczyk
      */
-    public function put(int $id, resource $resource) : bool ;
+    public function put(int $id, \resource $resource) : bool ;
 
 
     /**
@@ -24,7 +24,7 @@ interface Storage
      * @return resource
      * @author Krzysztof Bednarczyk
      */
-    public function fetch(int $id) : resource;
+    public function fetch(int $id) : \resource;
 
     /**
      * @param int $id
